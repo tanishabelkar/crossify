@@ -4,17 +4,23 @@ const path = require("path");
 const querystring = require("querystring");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 //Get from .env file
 require("dotenv").config();
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
-const redirectUri = process.env.REDIRECT_URI;
 const rapidApiKey = process.env.RAPID_API_KEY;
 const rapidApiHost = process.env.RAPID_API_HOST;
 const key1 = process.env.COOKIE_KEY1;
 const key2 = process.env.COOKIE_KEY2;
+
+let redirectUri;
+if (process.env.NODE_ENV === 'development') {
+  redirectUri = "http://localhost:3000/callback";
+} else {
+  redirectUri = "https://crossify-app.onrender.com/callback";
+}
 
 //Configure app
 const app = express();
