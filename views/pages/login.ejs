@@ -8,8 +8,23 @@
     <header>
         <%- include('../partials/header'); %>
     </header>
-    <div class="container d-flex align-items-center justify-content-center" style="min-width: 300px; max-width: 50%;">
-        <button> <a href="/login">Login With Spotify</a></button>
+    <div class="welcome-wrapper">
+        <h2 class="welcome">Welcome To Crossify!</h2>
+        <div class="instructions mx-auto">
+            <h5 class="instructions-heading">How it works-</h5>
+            <ol class="instructions-list">
+                <li>Login with your Spotify Account</li>
+                <li>Paste the link of a Youtube Music Playlist.</li>
+                <li>Make sure the playlist is public. (No playlists personally curated for you like "My mix")</li>
+                <li>And that's it! You can find your new playlist in your spotify account.</li>
+            </ol>
+        </div>
+        <button class="get-started mx-auto"><a href="/login">Get Started!</a></button>
+        <hr>
+        <p class="disclaimer"><b>Disclaimer:</b> Please note that not all songs available on YouTube Music may be
+            accessible on Spotify. In cases where the song is unavailable, I have provided the closest possible match.
+            While this approach works for most songs, certain tracks particularly instrumental ones, may not convert as
+            expected. Enjoy your music experience!</p>
     </div>
     <footer>
         <%- include('../partials/footer'); %>

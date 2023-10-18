@@ -13,10 +13,15 @@
         --white: #ffffff;
     }
 
+    body {
+        margin-bottom: 70px;
+    }
+
     footer {
-        position: fixed;
+        position: absolute;
         bottom: 0;
         width: 100%;
+        height: 70px;
     }
 
     i {
@@ -31,6 +36,61 @@
 
     a {
         text-decoration-line: none;
+        color: inherit;
+    }
+
+    .welcome-wrapper {
+        padding-left: 16px;
+        padding-right: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+    }
+
+    .welcome {
+        margin: 2rem;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .instructions {
+        min-width: 300px;
+        width: 60%;
+        margin: 1rem;
+    }
+
+    .instructions-heading {
+        font-size: 25px;
+    }
+
+    .instructions-list {
+        text-indent: 18px;
+    }
+
+    .get-started {
+        width: fit-content;
+        height: auto;
+        padding: 10px 16px;
+        border-radius: 25px;
+        border: var(--blue) 3px solid;
+        background-color: transparent;
+        color: var(--black);
+        transition: all 180ms ease-in-out;
+    }
+    .get-started:hover {
+        background-color: var(--blue);
+        color: var(--white);
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    .disclaimer {
+        color: darkgray;
+        font-size: smaller;
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        text-align: justify;
     }
 
     .form-body {

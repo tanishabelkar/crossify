@@ -59,7 +59,6 @@ async function getUser() {
         Authorization: "Bearer " + access_token,
       },
     });
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return null;
@@ -170,12 +169,9 @@ async function processPlaylist(playlistItems) {
     const title = filterSearchQuery(song.snippet.title);
     const uri = await searchSpotify(title);
     if (uri !== null) {
-      console.log(uri);
       spotifyURI.push(uri);
     }
   }
-  console.log("All search requests completed.");
-  console.log("Spotify URIs:", spotifyURI);
   return spotifyURI;
 }
 
@@ -188,7 +184,6 @@ app.get("/", async function (req, res) {
   access_token = req.session.access_token;
   if (access_token) {
     user = await getUser();
-    console.log(user);
     res.render("pages/index.ejs", { user: user });
   } else {
     res.render("pages/login.ejs", {user: null});
@@ -272,14 +267,15 @@ app.get("/error", function (req, res) {
 app.post("/make-playlist", async function (req, res) {
   try {
     if (access_token === null || user === null) {
-      return res.send("Please login");
+      return res.redirect("/login");
     }
 
     const link = req.body.link;
     const reg = /.*(?:youtube|youtu\.be)\.com\/.*list=([A-Za-z0-9_-]*)/gm;
     const playlistId = reg.exec(link)[1];
 
-    const name = await getPlaylistName(playlistId);
+    let name = await getPlaylistName(playlistId);
+    if (name === null) name = "My crossify playlist"
     const playlistItems = await getPlaylistItems(playlistId);
 
     if (!playlistItems) {
