@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <header><%- include('../partials/header'); %></header>
+    <div class="form-body" id="link-form">
+        <form name="linkform" method="post" action="/make-playlist" onsubmit="return validate()">
+            <label class="link-label" for="link">Enter the URL of any YouTube Playlist</label>
+            <div class="link-input-group"> <input class="link-input focus-ring rounded-3" id="link" name="link"
+                    type="url" placeholder="eg. https://music.youtube.com/playlist..." required>
+                <button class="link-submit" id="submit-button" type="submit" onmouseenter="onActive()"
+                    onmouseleave="onInactive()"><i
+                        class="fa-solid fa-angle-right fa-xl"></i></button>
+            </div>
+        </form>
+    </div>
+    <div class="off" id="loader">
+        Please wait
+        <i class="fa-solid fa-spinner fa-spin-pulse fa-2xl"></i>
+    </div>
+    <footer><%- include('../partials/footer'); %></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+    function validate() {
+        const reg = /.*youtube|youtu\.be\.com\/.*list=[A-Za-z0-9_-]*/gm
+        const inputLink = document.forms["linkform"]["link"].value
+        if (inputLink.match(reg)) {
+            document.getElementById("link-form").className = "off"
+            document.getElementById("loader").className = "on";
+            return true;
+        }
+        else {
+            alert("Please enter a valid link");
+            return false;
+        }
+
+    }
+    function onActive() {
+        document.getElementById('submit-button').innerHTML = '<i class="fa-solid fa-angle-right fa-xl fa-beat-fade"></i>'
+    }
+    function onInactive() {
+        document.getElementById('submit-button').innerHTML = '<i class="fa-solid fa-angle-right fa-xl"></i>'
+    }
+</script>
+
+</html>

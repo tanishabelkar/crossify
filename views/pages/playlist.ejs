@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <header><%- include('../partials/header'); %></header>
+    <div class="container p-4">
+        <div class="playlist-body card border border-2 rounded-3 mx-auto">
+            <h4 class="card-header playlist-body-msg">Your playlist is Ready!</h4>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%=playlist_name%>
+                </h5>
+                <a class="card-link" href=<%=playlist_url%> target="_blank">Listen Now!<i
+                        class="fa-solid fa-headphones-simple"></i></a>
+            </div>
+        </div>
+    </div>
+    <footer><%- include('../partials/footer'); %></footer>
+</body>
+<script>
+
+</script>
+
+</html>

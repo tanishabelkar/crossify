@@ -1,0 +1,40 @@
+{
+  "name": "v2",
+  "version": "1.0.0",
+  "description": "fresh start to crossify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tanisha",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "node-localstorage": "^3.0.5",
+    "path": "^0.12.7",
+    "querystring": "^0.2.1",
+    "ytdl-core": "^4.11.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
