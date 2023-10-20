@@ -1,22 +1,21 @@
 <nav class="navbar">
     <div class="container-fluid">
         <span class="navbar-brand mb-0 crossify">CROSSIFY</span>
-        <% if(user) { %>
-        <div class="dropdown">
-            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Hi <%= user.display_name %>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="/logout">Logout<i
-                            class="fa-solid fa-right-from-bracket fa-xs"></i></a>
-                </li>
-            </ul>
-        </div>
-        <% } %>
-        <% if(!user) { %>
-            <div>
-                <a class="nav-link" href="/login">Login <i class="fa-solid fa-right-to-bracket fa-xs"></i></a>
+        <%if (user !==null || user !==undefined) { %>
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Hi <%= user.display_name%>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="/logout">Logout<i
+                                class="fa-solid fa-right-from-bracket fa-xs"></i></a>
+                    </li>
+                </ul>
             </div>
-        <%}%>
+            <% } else { %>
+                <div>
+                    <a class="nav-link" href="/login">Login <i class="fa-solid fa-right-to-bracket fa-xs"></i></a>
+                </div>
+                <% } %>
     </div>
 </nav>
