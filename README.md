@@ -24,6 +24,16 @@ COOKIE_KEY1=<your hash key>
 COOKIE_KEY2=<your second hash key>`
 3. Install the required packages with `npm` or `yarn`
 
+# Screenshots
+## Login Page
+![cf-login](https://github.com/tanishabelkar/crossify/assets/68585820/c4af703e-9787-4941-8f0c-6e063f148d7f)
+
+## Generating the playlist
+![cf-form](https://github.com/tanishabelkar/crossify/assets/68585820/5a282212-280d-4065-9644-c147858da20a)
+![cf-load](https://github.com/tanishabelkar/crossify/assets/68585820/6968ea94-087c-4a01-884a-90ec86044865)
+![cf-result](https://github.com/tanishabelkar/crossify/assets/68585820/aae911cb-221d-44df-9400-b3317afb3b7d)
+
+
 # Feedback and Contribution
 I would love to hear feedback on what can be improved and suggestions about more features. Reach out to me at tanishabelkar26@gmail.com !
 
